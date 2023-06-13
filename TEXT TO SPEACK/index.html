@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speach</title>
+</head>
+<body>
+    <!-- <textarea>
+
+    </textarea>
+    <button>Speak Button</button>
+    <script>
+        let button = document.querySelector("button")
+        let text = document.querySelector("textarea")
+        button.addEventListener("click",() => {
+            let utterance = new 
+            SpeechSynthesisUtterance(text.value);
+            speechSynthesis.speak(utterance)
+            speechSynthesisUtterance.volume = 2;
+        })
+    </script> -->
+    <!-- <h1>Text-to-Speech Example</h1>
+
+    <textarea id="textInput" placeholder="Enter text"></textarea>
+    <button id="speakButton">Speak</button>
+   -->
+  <h1>Dynamic Text-to-Speech Example</h1>
+
+  <div id="textContainer">
+    <input type="text" id="textInput" placeholder="Enter text">
+    <button id="speakButton">Speak</button>
+  </div>
+
+  <script>
+    // Function to handle the button click event
+    function speakText() {
+      var textInput = document.getElementById("textInput");
+      var text = textInput.value;
+
+      if (text !== "") {
+        if ('speechSynthesis' in window) {
+          var speechSynthesisUtterance = new SpeechSynthesisUtterance();
+          speechSynthesisUtterance.text = text;
+          speechSynthesisUtterance.rate = 1;
+          speechSynthesisUtterance.pitch = 1;
+          speechSynthesisUtterance.volume = 1;
+          window.speechSynthesis.speak(speechSynthesisUtterance);
+        } else {
+          console.log('Text-to-speech synthesis is not supported in this browser.');
+        }
+      }
+    }
+
+    // Add an event listener to the button
+    document.getElementById("speakButton").addEventListener("click", speakText);
+
+    // Add event listener to listen for Enter key press on text input
+    document.getElementById("textInput").addEventListener("keypress", function(event) {
+      if (event.key === "Enter") {
+        speakText();
+      }
+    });
+  </script>
+    <script>
+      // Function to handle the button click event
+    //   function speakText() {
+    //     var text = document.getElementById("textInput").value;
+    //     if (text !== "") {
+    //       if ('speechSynthesis' in window) {
+    //         var speechSynthesisUtterance = new SpeechSynthesisUtterance();
+    //         speechSynthesisUtterance.text = text;
+    //         speechSynthesisUtterance.rate = 1;
+    //         speechSynthesisUtterance.pitch = 1;
+    //         speechSynthesisUtterance.volume = 1;
+    //         window.speechSynthesis.speak(speechSynthesisUtterance);
+    //       } else {
+    //         console.log('Text-to-speech synthesis is not supported in this browser.');
+    //       }
+    //     }
+    //   }
+  
+    //   // Add an event listener to the button
+    //   document.getElementById("speakButton").addEventListener("click", speakText);
+    // const synth = window.speechSynthesis;
+    //     function speakText(text) {
+    //     const utterance = new SpeechSynthesisUtterance(text);
+    //     utterance.rate = 1; // Speed of speech (0.1 to 10)
+    //     utterance.pitch = 1; // Pitch of speech (0 to 2)
+    //     utterance.volume = 1; // Volume of speech (0 to 1)
+
+    //     synth.speak(utterance);
+    //     }
+
+    //     // Usage example
+    //     speakText("Hello, how are you?");
+
+    </script>
+</body>
+</html>

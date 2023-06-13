@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container col-md-6 col-sm-12 col-lg-6 bg-dark" style="font-family: sans-serif;">
+        <h1 class="mt-5 text-muted fw-lighter text-center ">Quiz App</h1>
+        <div id="welcome" class="mt-4"></div>
+        <div id="question" class="mt-4"></div>
+        <div id="options" class="my-4"></div>
+        <button id="submit" class="btn btn-primary col-md-6 ">Submit</button>
+        <div id="score" class="mt-4"></div>
+        <audio id="backgroundMusic" src="https://www.bensound.com/royalty-free-music/track/delicate-piano-music-for-videos-45" loop autoplay></audio>
+      </div>
+      <!-- <script>
+        // getUsername()
+        // Function to get the username
+function getUsername() {
+    let username = localStorage.getItem('username');
+    if (!username) {
+      username = prompt('Please enter your username:');
+      localStorage.setItem('username', username);
+    }
+    // return username;
+  }
+//   getUsername()
+
+
+   // Function to display the welcome message
+   function showWelcomeMessage() {
+    const welcomeElement = document.getElementById('welcome');
+    const username = getUsername();
+    welcomeElement.innerHTML +=`
+      <h3>Welcome, ${username}!</h3>
+    `;
+  }
+    // Load the welcome message
+         showWelcomeMessage();
+  
+      </script> -->
+    <!-- <script src="script.js"></script> -->
+    <script src="main.js"></script>
+</body>
+</html>
