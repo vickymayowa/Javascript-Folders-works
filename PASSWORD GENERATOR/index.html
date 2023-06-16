@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="/bootstrap-5.2.2-dist/css/bootstrap.css">
+  </head>
+  <body>
+    <div class="fw-lighter container col-md-6 col-lg-6 col-sm-12">
+        <h4 class="fw-lighter text-muted text-dark text-center d-4">Password Generator</h4>
+        <div>
+         <input type="text" id="password" placeholder="Generated Password Shows Here" class="form-control">
+         <br>
+         <button class="btn btn-dark col-md-6">Generate Password</button>
+        </div>
+    </div>
+    <script>
+        const button = document.querySelector('button');
+        function Generatepassword (){
+            var length = 10;
+            var charset = 'asqwertyuioplkjhgfdsazxcvbnm123456789wertyughj'
+            var Password = ""
+
+            for (var i = 0; i < length; i++){
+                var randomIndex = Math.floor(Math.random() * charset.length);
+                Password += charset[randomIndex];
+            }
+            document.getElementById("password").value = Password
+            console.log(Password);
+        }
+        button.addEventListener('click', Generatepassword);
+    </script>
+  </body>
+</html>
